@@ -1,207 +1,376 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#090b10" />
-  <meta name="description" content="TMail is a fast, keyboard-first terminal email client built in Rust." />
-  <meta property="og:title" content="TMail — Email at terminal speed" />
-  <meta property="og:description" content="A Gmail-inspired, keyboard-first terminal email client built in Rust." />
-  <meta property="og:type" content="website" />
-  <title>TMail — Email at terminal speed</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta
+      name="description"
+      content="TMail is a Gmail-inspired terminal email client built in Rust and backed by Himalaya."
+    />
+    <meta property="og:title" content="TMail — Email at terminal speed" />
+    <meta
+      property="og:description"
+      content="A Gmail-inspired terminal email client built in Rust."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tmail.kudris.com/" />
+    <title>tmail</title>
+    <link rel="canonical" href="https://tmail.kudris.com/" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">skip to content</a>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="TMail home">
-      <span class="brand-mark" aria-hidden="true">t</span>
-      <span>tmail</span>
-    </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#features">Features</a>
-      <a href="#install">Install</a>
-      <a href="https://github.com/jodaka/tmail" target="_blank" rel="noreferrer">GitHub</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> Open source · Rust · Terminal-native</div>
-        <h1>Email at<br><span>terminal speed.</span></h1>
-        <p class="hero-text">TMail brings a familiar inbox into the terminal — optimized for keyboards, built in Rust, and powered by Himalaya.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#install">Install TMail <span aria-hidden="true">↘</span></a>
-          <a class="button button-secondary" href="https://github.com/jodaka/tmail" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-meta" aria-label="Platform support">
-          <span><b>macOS</b> primary</span>
-          <span><b>Linux</b> supported</span>
-          <span><b>Windows</b> out of scope</span>
-        </div>
+    <div class="window">
+      <div class="win-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="win-title">tmail — session</span>
+        <span class="win-meta" aria-hidden="true">utf-8</span>
       </div>
 
-      <div class="terminal-wrap" aria-label="Illustration of the TMail terminal interface">
-        <div class="terminal-shadow"></div>
-        <div class="terminal">
-          <div class="terminal-topbar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <div class="terminal-title">tmail — inbox</div>
-            <div class="terminal-clock">09:41</div>
-          </div>
-          <div class="mail-ui">
-            <aside class="mail-sidebar">
-              <div class="compose">＋ Compose</div>
-              <div class="folder active"><span>⌂</span> Inbox <b>6</b></div>
-              <div class="folder"><span>↗</span> Sent</div>
-              <div class="folder"><span>✎</span> Drafts <b>2</b></div>
-              <div class="folder"><span>☆</span> Starred</div>
-              <div class="folder"><span>⌫</span> Trash</div>
-              <div class="sidebar-foot">tmail</div>
-            </aside>
-            <div class="mail-main">
-              <div class="mail-toolbar"><span class="search">/ Search mail</span><span>1–6</span></div>
-              <div class="message selected"><span class="unread"></span><strong>Maya Chen</strong><span class="subject">Design review · Final pass before Friday</span><time>09:38</time></div>
-              <div class="message"><span class="unread"></span><strong>GitHub</strong><span class="subject">[tmail] CI passed on master</span><time>09:12</time></div>
-              <div class="message"><span></span><strong>Sam</strong><span class="subject">Re: terminal mail clients</span><time>08:54</time></div>
-              <div class="message"><span class="unread"></span><strong>Linear</strong><span class="subject">3 updates in TMail</span><time>08:30</time></div>
-              <div class="message"><span></span><strong>me</strong><span class="subject">Draft: v1 release notes</span><time>Yesterday</time></div>
-              <div class="message"><span></span><strong>Rust Weekly</strong><span class="subject">This week in Rust</span><time>Yesterday</time></div>
-              <div class="shortcut-bar"><span><kbd>j</kbd><kbd>k</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>c</kbd> compose</span><span><kbd>?</kbd> keys</span></div>
+      <nav class="tabs" aria-label="Sections">
+        <a class="tab" href="#top" aria-current="true"><span class="n">[0]</span>top</a>
+        <a class="tab" href="#screens"><span class="n">[1]</span>screens</a>
+        <a class="tab" href="#features"><span class="n">[2]</span>features</a>
+        <a class="tab" href="#keys"><span class="n">[3]</span>keys</a>
+        <a class="tab" href="#install"><span class="n">[4]</span>install</a>
+        <a class="tab" href="#files"><span class="n">[5]</span>files</a>
+        <a class="tab" href="#links"><span class="n">[6]</span>links</a>
+        <a
+          class="tab tab-ext"
+          href="https://github.com/jodaka/tmail"
+          target="_blank"
+          rel="noreferrer"
+          >github ↗</a
+        >
+      </nav>
+
+      <main id="main">
+        <p class="man-topline" aria-hidden="true">
+          <span>TMAIL</span>
+          <span>User Commands</span>
+          <span>TMAIL</span>
+        </p>
+
+        <section class="man man-hero" id="top" data-label="0:top">
+          <h2>NAME</h2>
+          <div class="man-body">
+            <h1 class="hero-name">tmail</h1>
+            <p class="lede">
+              A Gmail-inspired inbox for the terminal — keyboard-first, fast to navigate, and backed
+              by Himalaya for mail protocols and credentials. Opensource.
+            </p>
+            <div class="cta">
+              <a class="btn btn-primary" href="#install">Install TMail</a>
+              <a
+                class="btn btn-ghost"
+                href="https://github.com/jodaka/tmail"
+                target="_blank"
+                rel="noreferrer"
+                >View source</a
+              >
+            </div>
+            <p class="meta-line">runs on <b>macOS</b> · <b>Linux</b> · <b>Windows</b></p>
+            <div class="capture">
+              <p class="prompt"><span class="p">$</span> tmail</p>
+              <figure class="shot">
+                <img
+                  src="assets/1.avif"
+                  alt="TMail inbox in the default dark theme"
+                  width="1722"
+                  height="1036"
+                  fetchpriority="high"
+                />
+                <figcaption># real TMail session — dark theme</figcaption>
+              </figure>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="marquee" aria-label="Highlights">
-      <div class="marquee-track">
-        <span>KEYBOARD FIRST</span><i>✦</i><span>FAST STARTUP</span><i>✦</i><span>THEMES</span><i>✦</i><span>OFFLINE CACHE</span><i>✦</i><span>IMAP + SMTP</span><i>✦</i><span>KEYBOARD FIRST</span><i>✦</i><span>FAST STARTUP</span><i>✦</i><span>THEMES</span><i>✦</i><span>OFFLINE CACHE</span><i>✦</i><span>IMAP + SMTP</span>
-      </div>
-    </section>
+        <section class="man" id="screens" data-label="1:screens">
+          <h2><span class="idx">[1]</span>SCREENS</h2>
+          <div class="man-body">
+            <p class="lede">
+              Dark, light, and custom palettes — captures from real TMail sessions, not interface
+              mockups. Pick a theme to preview it.
+            </p>
+            <div class="switcher" data-switcher>
+              <div class="tui-menu" role="tablist" aria-label="Theme previews">
+                <button
+                  type="button"
+                  role="tab"
+                  id="tab-dark"
+                  aria-selected="true"
+                  aria-controls="panel-dark"
+                  tabindex="0"
+                >
+                  dark
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="tab-light"
+                  aria-selected="false"
+                  aria-controls="panel-light"
+                  tabindex="-1"
+                >
+                  light
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="tab-warm"
+                  aria-selected="false"
+                  aria-controls="panel-warm"
+                  tabindex="-1"
+                >
+                  nord
+                </button>
+              </div>
 
-    <section class="section-shell feature-intro" id="features">
-      <div class="section-kicker">01 — WHY TMAIL</div>
-      <div>
-        <h2>Built for people who already live in a terminal.</h2>
-        <p>No browser tab. No heavyweight desktop shell. Just your inbox, your keyboard, and the tools you already use.</p>
-      </div>
-    </section>
+              <div
+                class="panel"
+                id="panel-dark"
+                role="tabpanel"
+                aria-labelledby="tab-dark"
+                tabindex="0"
+              >
+                <figure class="shot">
+                  <img
+                    src="assets/4.avif"
+                    alt="TMail inbox in the default dark theme"
+                    width="1722"
+                    height="1036"
+                    loading="lazy"
+                  />
+                  <figcaption># email view in default theme</figcaption>
+                </figure>
+              </div>
+              <div
+                class="panel"
+                id="panel-light"
+                role="tabpanel"
+                aria-labelledby="tab-light"
+                tabindex="0"
+                hidden
+              >
+                <figure class="shot">
+                  <img
+                    src="assets/2.avif"
+                    alt="TMail inbox in the lighttheme"
+                    width="1722"
+                    height="1036"
+                    loading="lazy"
+                  />
+                  <figcaption># emails list in light theme</figcaption>
+                </figure>
+              </div>
+              <div
+                class="panel"
+                id="panel-warm"
+                role="tabpanel"
+                aria-labelledby="tab-warm"
+                tabindex="0"
+                hidden
+              >
+                <figure class="shot">
+                  <img
+                    src="assets/3.avif"
+                    alt="TMail inbox in the lighttheme"
+                    width="1722"
+                    height="1036"
+                    loading="lazy"
+                  />
+                  <figcaption># emails list in nord theme</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <section class="feature-grid section-shell">
-      <article class="feature-card featured">
-        <div class="card-number">01</div>
-        <div class="feature-visual keys-visual">
-          <div class="key-row"><kbd>j</kbd><kbd>k</kbd></div>
-          <div class="key-row"><kbd>g</kbd><kbd>c</kbd><kbd>r</kbd></div>
-          <div class="key-caption">Your inbox, one keystroke away.</div>
-        </div>
-        <h3>Keyboard first</h3>
-        <p>Navigate, open, reply, compose, search, archive and more without reaching for the mouse.</p>
-      </article>
+        <section class="man" id="features" data-label="2:features">
+          <h2><span class="idx">[2]</span>FEATURES</h2>
+          <div class="man-body">
+            <p class="lede">
+              Built for people who already live in a terminal. No browser tab and no desktop shell —
+              use familiar keyboard rhythms and switch accounts and themes in place.
+            </p>
+            <dl class="features">
+              <div class="feat">
+                <dt>Keyboard first</dt>
+                <dd>
+                  Navigate, search, read, reply, compose, archive, select in bulk, and more without
+                  leaving the keyboard. Mouse support is also present but turned off by default.
+                </dd>
+              </div>
+              <div class="feat">
+                <dt>Multiple accounts</dt>
+                <dd>
+                  Switch between configured accounts from inside TMail with <kbd>Ctrl+G</kbd>.
+                </dd>
+              </div>
+              <div class="feat">
+                <dt>Powered by Himalaya</dt>
+                <dd>
+                  Mail protocols, accounts, and credentials stay in the proven Himalaya CLI layer.
+                </dd>
+              </div>
+              <div class="feat">
+                <dt>Themes at runtime</dt>
+                <dd>
+                  Use the built-in themes or define your own.
+                </dd>
+              </div>
+              <div class="feat">
+                <dt>Fast warm starts</dt>
+                <dd>
+                  A small per-account on-disk cache lets previously loaded mail appear immediately
+                  while fresh data loads in the background (cache can be disabled).
+                </dd>
+              </div>
+              <div class="feat">
+                <dt>Built-in or external editor</dt>
+                <dd>
+                  The built-in composer is the default, but you can use any other editor you want via <code>$EDITOR</code>.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
 
-      <article class="feature-card">
-        <div class="card-number">02</div>
-        <div class="feature-icon">◫</div>
-        <h3>Gmail-inspired</h3>
-        <p>A familiar mailbox layout translated into a focused terminal interface.</p>
-      </article>
+        <section class="man" id="keys" data-label="3:keys">
+          <h2><span class="idx">[3]</span>KEYBINDINGS</h2>
+          <div class="man-body">
+            <p class="lede">
+              Move, search, compose, reply, switch accounts, and open your editor — no mouse
+              required. Best of all — you can fully reconfigure all keybindings to suit your needs
+            </p>
+            <dl class="keymap">
+              <div class="krow">
+                <dt><kbd>↑</kbd><kbd>↓</kbd> / <kbd>j</kbd><kbd>k</kbd></dt>
+                <dd>move between messages</dd>
+              </div>
+              <div class="krow">
+                <dt><kbd>/</kbd></dt>
+                <dd>search mail</dd>
+              </div>
+              <div class="krow">
+                <dt><kbd>c</kbd></dt>
+                <dd>compose a new message</dd>
+              </div>
+              <div class="krow">
+                <dt><kbd>r</kbd></dt>
+                <dd>reply to the open message</dd>
+              </div>
+              <div class="krow">
+                <dt><kbd>Ctrl</kbd><span class="plus">+</span><kbd>G</kbd></dt>
+                <dd>switch between accounts</dd>
+              </div>
+              <div class="krow">
+                <dt><kbd>Ctrl</kbd><span class="plus">+</span><kbd>E</kbd></dt>
+                <dd>edit the draft in your external editor</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
 
-      <article class="feature-card">
-        <div class="card-number">03</div>
-        <div class="feature-icon">⌁</div>
-        <h3>Powered by Himalaya</h3>
-        <p>Mail protocols, accounts and credentials are handled by the battle-tested Himalaya CLI.</p>
-      </article>
+        <section class="man" id="install" data-label="4:install">
+          <h2><span class="idx">[4]</span>INSTALLATION</h2>
+          <div class="man-body">
+            <p class="lede">
+              Download a binary for your platform or use Homebrew on mac.
+              If you do not have a config yet, TMail starts its account setup flow
+              automatically.
+            </p>
+            <div class="transcript">
+              <pre><code><span class="p">$</span> brew tap jodaka/tap https://github.com/jodaka/homebrew-tap
+<span class="p">$</span> brew install jodaka/tap/tmail
+<span class="p">$</span> tmail</code></pre>
+              <div class="transcript-foot">
+                <button
+                  class="copy"
+                  type="button"
+                  aria-live="polite"
+                  data-copy="brew tap jodaka/tap https://github.com/jodaka/homebrew-tap\nbrew install jodaka/tap/tmail"
+                >
+                  [ copy ]
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <article class="feature-card">
-        <div class="card-number">04</div>
-        <div class="feature-icon">◐</div>
-        <h3>Make it yours</h3>
-        <p>Switch themes at runtime, customize color tokens, remap keys, or run without color entirely.</p>
-      </article>
-
-      <article class="feature-card wide">
-        <div class="card-number">05</div>
-        <div class="cache-visual">
-          <div class="cache-line"><span>mailbox listing</span><b>cached</b></div>
-          <div class="cache-line"><span>message pages</span><b>cached</b></div>
-          <div class="cache-line"><span>opened messages</span><b>cached</b></div>
-        </div>
-        <div>
-          <h3>Instant where it matters</h3>
-          <p>A small on-disk cache keeps previously loaded mail ready while refreshes happen in the background.</p>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="card-number">06</div>
-        <div class="feature-icon">↗</div>
-        <h3>Use your editor</h3>
-        <p>Compose with the built-in editor, <code>$EDITOR</code>, or a command such as <code>nvim</code>.</p>
-      </article>
-    </section>
-
-    <section class="section-shell install-section" id="install">
-      <div class="install-copy">
-        <div class="section-kicker">02 — INSTALL</div>
-        <h2>Two commands.<br>Then check your mail.</h2>
-        <p>Homebrew installs TMail and Himalaya together. TMail can guide you through account setup on first run.</p>
-      </div>
-      <div class="code-card">
-        <div class="code-card-head"><span>Terminal</span><button class="copy-button" type="button" data-copy="brew tap jodaka/tap https://github.com/jodaka/homebrew-tap\nbrew install jodaka/tap/tmail">Copy</button></div>
-        <pre><code><span class="prompt">$</span> brew tap jodaka/tap https://github.com/jodaka/homebrew-tap
-<span class="prompt">$</span> brew install jodaka/tap/tmail</code></pre>
-        <div class="code-foot"><span>Then run</span><code>tmail</code></div>
-      </div>
-    </section>
-
-    <section class="section-shell config-section">
-      <div class="section-kicker">03 — CONFIGURE</div>
-      <div class="config-grid">
-        <div>
-          <h2>Sensible defaults.<br>Precise control.</h2>
-          <p>TMail and Himalaya share one TOML config. Tune the parts you care about and leave the rest alone.</p>
-        </div>
-        <div class="config-code">
-<pre><code><span class="muted"># ~/.config/himalaya/config.toml</span>
-[tmail]
-mouse = <span class="accent">true</span>
-notifications = <span class="string">"on"</span>
-view_mode = <span class="string">"compact"</span>
+        <section class="man" id="files" data-label="5:files">
+          <h2><span class="idx">[5]</span>FILES</h2>
+          <div class="man-body">
+            <p class="lede">
+              TMail reads its own settings from the same TOML file Himalaya uses for accounts —
+              <code>~/.config/himalaya/config.toml</code>. Keep the defaults, or opt into mouse
+              support, notifications, themes, custom keybindings or a bunch of other settings.
+            </p>
+            <pre class="config"><code>[tmail]
+mouse = <span class="tok-b">true</span>
+notifications = <span class="tok-s">"on"</span> <span class="tok-c">// off by default</span>
+view_mode = <span class="tok-s">"compact"</span>
 
 [tmail.theme]
-name = <span class="string">"default"</span>
-accent = <span class="string">"#8ab4f8"</span>
+name = <span class="tok-s">"light"</span>
 
 [tmail.composer]
-editor = <span class="string">"$EDITOR"</span></code></pre>
-        </div>
-      </div>
-    </section>
+editor = <span class="tok-s">"$EDITOR"</span></code></pre>
+          </div>
+        </section>
 
-    <section class="final-cta section-shell">
-      <div class="cta-mark">t</div>
-      <h2>Mail without<br>leaving the terminal.</h2>
-      <p>Open source. Built in Rust. Ready for your inbox.</p>
-      <div class="hero-actions centered">
-        <a class="button button-primary" href="https://github.com/jodaka/tmail" target="_blank" rel="noreferrer">Get TMail on GitHub <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-  </main>
+        <section class="man" id="links" data-label="6:links">
+          <h2><span class="idx">[6]</span>SEE ALSO</h2>
+          <div class="man-body">
+            <ul class="links">
+              <li>
+                <a href="https://github.com/jodaka/tmail" target="_blank" rel="noreferrer"
+                  >github.com/jodaka/tmail</a
+                >
+                <span class="note">— source and issues</span>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/jodaka/tmail/tree/master/docs"
+                  target="_blank"
+                  rel="noreferrer"
+                  >github.com/jodaka/tmail/tree/master/docs</a
+                >
+                <span class="note">— documentation</span>
+              </li>
+            </ul>
+            <p class="closing">Open source. Built in Rust. Ready for your inbox.</p>
+            <div class="cta">
+              <a
+                class="btn btn-primary"
+                href="https://github.com/jodaka/tmail"
+                target="_blank"
+                rel="noreferrer"
+                >Get TMail on GitHub</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
 
-  <footer class="site-footer section-shell">
-    <a class="brand" href="#top"><span class="brand-mark">t</span><span>tmail</span></a>
-    <p>Keyboard-first email for the terminal.</p>
-    <div class="footer-links">
-      <a href="https://github.com/jodaka/tmail" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://github.com/jodaka/tmail/blob/master/README.md" target="_blank" rel="noreferrer">Docs</a>
+      <footer class="man-foot">
+        <span>tmail</span>
+        <span>keyboard-first email for the terminal</span>
+        <span>TMAIL</span>
+      </footer>
+
+      <div class="status" aria-hidden="true">
+        <span class="chip">0:top</span>
+        <span class="status-mid">tmail</span>
+        <span class="status-hint">[0-6] jump</span>
+      </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
